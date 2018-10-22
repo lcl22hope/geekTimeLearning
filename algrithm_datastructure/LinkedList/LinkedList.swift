@@ -20,6 +20,18 @@ class LinkedList<Value: Equatable> {
         return head == nil
     }
 
+    func length() -> Int {
+        guard var current = head else {
+            return 0
+        }
+        var i = 1
+        while(current.next != nil) {
+            current = current.next!
+            i += 1
+        }
+        return i
+    }
+
     // head insert
     func push(value: Value) {
         head = Node(value: value, next: head)
